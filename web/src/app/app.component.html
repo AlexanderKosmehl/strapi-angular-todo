@@ -1,0 +1,11 @@
+<h1>Strapi-Todo-App</h1>
+<ul>
+  <li *ngFor="let todo of todos" [ngClass]="{ done: todo.done }" (click)="finishTodo(todo)">
+    {{ todo.text }}
+  </li>
+</ul>
+<div>
+  <input type="text" [(ngModel)]="newTodo" />
+  <button (click)="addTodo()">+</button>
+</div>
+<button (click)="deleteFinishedTodos()">Delete all finished Todos</button>
